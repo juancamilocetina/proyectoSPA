@@ -3,6 +3,8 @@ const app = require("./app");
 const port = process.env.PORT || 3977;
 const { API_VERSION, IP_SERVER, PORT_DB } = require("./config");
 
+
+mongoose.set("useFindeAndModify", false);
 // mongoose.connect(`mongodb://localhost:27017/baseDatos`);
 mongoose.connect(
     `mongodb://${IP_SERVER}:${PORT_DB}/baseDatos`,
