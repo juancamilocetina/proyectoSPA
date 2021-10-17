@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
-const app = require("./app");
+const mongoose = require("mongoose"); //Importar el paquete
+const app = require("./app");          
 const port = process.env.PORT || 3977;
 const { API_VERSION, IP_SERVER, PORT_DB } = require("./config");
 
 
-mongoose.set("useFindeAndModify", false);
+mongoose.set("useFindeAndModify", false); //Evita errores cuando se hace una peticion a la base de datos
 // mongoose.connect(`mongodb://localhost:27017/baseDatos`);
-mongoose.connect(
+mongoose.connect( //Conectar con nuestra base datos
     `mongodb://${IP_SERVER}:${PORT_DB}/baseDatos`,
     { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
     if(err){
